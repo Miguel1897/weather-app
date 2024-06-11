@@ -1,16 +1,10 @@
 const mongoose = require('mongoose');
-const password = 'admin'; 
+require('dotenv').config(); // Cargar las variables de entorno del archivo .env
 
-const uri = `mongodb+srv://admin:${password}@cluster0.v7hj7jk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = process.env.MONGO_URI;
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect(uri);
-        console.log('MongoDB connected');
-    } catch (error) {
-        console.error('Error connecting to MongoDB:', error.message);
-        process.exit(1); // Salir del proceso si hay un error de conexión
-    }
+const connectDB = () => {
+    return mongoose.connect(uri); 
 };
 
 module.exports = connectDB;

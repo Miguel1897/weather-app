@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Weather = ({ weatherData }) => {
@@ -6,10 +5,10 @@ const Weather = ({ weatherData }) => {
     if (weatherData.cod !== 200) return <p>Ciudad no encontrada</p>;
 
     const weather = weatherData.weather[0];
-    const iconUrl = `https://openweathermap.org/img/wn/${weather.icon}.png`;
+    const iconUrl = `${process.env.PUBLIC_URL}/icons/${weather.icon}.svg`;
 
     return (
-        <div>
+        <div className='container_clima'>
             <h2>{weatherData.name}, {weatherData.sys.country}</h2>
             <img className="weather-icon" src={iconUrl} alt={weather.description} />
             <p className="temp">Temperatura actual: {weatherData.main.temp}°C</p>

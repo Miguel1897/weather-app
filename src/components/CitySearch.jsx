@@ -7,7 +7,7 @@ const CitySearch = ({ onSearch }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (query.trim()) {
-            onSearch(query);
+            onSearch(query); // Llamar a la función onSearch para iniciar la búsqueda
             setQuery('');
             setError('');
         } else {

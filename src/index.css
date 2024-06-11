@@ -104,22 +104,37 @@ html {
 }
 
 /* Estilo del contenedor del clima */
-.contenedor_clima {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 2px solid #1e90ff; /* Color del borde */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.container_clima {
+  background-color: #f0f8ff; /* Color de fondo para resaltar */
+  border: 1px solid #d1e7dd; /* Borde sutil */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px 0; /* Espaciado externo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center; /* Centrar el texto */
 }
 
-.contenedor_clima h2 {
-  color: #1e90ff; /* Color del título */
+.container_clima h2 {
+  color: #007bff; /* Color del título */
+  margin-bottom: 10px;
 }
 
-.contenedor_clima p {
+.weather-icon {
+  width: 100px; /* Tamaño de la imagen del ícono */
+  height: auto;
+  margin: 10px 0;
+}
+
+.temp {
+  font-size: 24px; /* Tamaño de fuente para la temperatura */
+  font-weight: bold;
+}
+
+.container_clima p {
+  font-size: 16px; /* Tamaño de fuente de los párrafos */
   color: #333; /* Color del texto */
+  margin: 5px 0;
 }
-
 /* Estilo del footer */
 .footer {
   background-color: #3f51b5; /* Fondo azul oscuro */
@@ -127,16 +142,17 @@ html {
   padding: 10px;
   text-align: center;
   border-top: 1px solid #1e88e5; /* Borde azul oscuro */
-  position: fixed;
+  position: absolute; /* Cambio a position: absolute */
   left: 0;
   bottom: 0;
   width: 100%;
-  margin: 20px 0; /* Márgenes azul oscuro */
+  margin: 0; /* Eliminamos el margen para que esté pegado al borde */
   border-radius: 8px; /* Borde redondeado */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave (ajustando la sombra al borde superior) */
 }
 
 p {
   font-size: 18px;
   line-height: 1.6;
 }
+

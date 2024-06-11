@@ -2,14 +2,12 @@ import React from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 
-const CitySelector = ({ onCityChange }) => {
+const CitySelector = ({ onCityChange, saveCityToDatabase }) => {
     const cities = ['Hawai', 'Londres', 'Miami', 'Buenos Aires', 'Córdoba', 'Rosario', 'Mendoza', 'Mar del Plata'];
-    const [city, setCity] = React.useState('');
 
-    const handleChange = (event) => {
-        const selectedCity = event.target.value;
-        setCity(selectedCity);
+    const handleChange = (selectedCity) => {
         onCityChange(selectedCity);
+        saveCityToDatabase(selectedCity);
     };
 
     return (
@@ -19,7 +17,7 @@ const CitySelector = ({ onCityChange }) => {
                     key={index}
                     underline="hover"
                     color="inherit"
-                    onClick={() => handleChange({ target: { value: city } })}
+                    onClick={() => handleChange(city)}
                 >
                     {city}
                 </Link>
